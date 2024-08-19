@@ -1,0 +1,14 @@
+{% extends 'expensetracker/base.html' %}
+
+{% block content %}
+<h2>{{ sheet_type }}</h2>
+<ul>
+    {% for sheet in sheets %}
+        <li>
+            <a href="{% url 'expensetracker:view_records' sheet.id %}">{{ sheet.month }}{{ sheet.year }}</a>       
+        </li>
+    {% empty %}
+    {% endfor %}
+</ul>
+<a href="{% url 'expensetracker:add_sheet' sheet_type %}">New Sheet</a>
+{% endblock content %}

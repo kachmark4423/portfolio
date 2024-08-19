@@ -1,0 +1,27 @@
+{% extends 'expensetracker/base.html' %}
+
+{% block content %}
+<h2>Expenses {{ sheet.month }} {{ sheet.year }}</h2>
+<table>
+<tr>
+    <th>Date</th>
+    <th>Amount</th>
+    <th>Description</th>
+    <th>PayType</th>
+    <th>Credit Card</th>
+    <th>Category</th>
+</tr>   
+    {% for record in records %}
+        <tr>
+            <td>{{ record.date }}</td>
+            <td>{{ record.amount }}</td>
+            <td>{{ record.description }}</td>
+            <td>{{ record.get_payType_display }}</td>
+            <td>{{ record.get_creditCard_display }}</td>
+            <td>{{ record.get_category_display }}</td>
+        </tr>   
+    {% empty %}
+    {% endfor %}
+</table>
+    <p><a href="{% url 'expensetracker:add_expense' sheet.id %}">Add Record</a></p>
+{% endblock content %}

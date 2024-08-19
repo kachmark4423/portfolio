@@ -1,0 +1,23 @@
+{% extends 'expensetracker/base.html' %}
+
+{% block content %}
+<h2>Income {{ sheet.month }} {{ sheet.year }}</h2>
+<table>
+<tr>
+    <th>Date</th>
+    <th>Amount</th>
+    <th>CashOrBank</th>
+    <th>Description</th>
+</tr>   
+    {% for record in records %}
+        <tr>
+            <td>{{ record.date }}</td>
+            <td>{{ record.amount }}</td>
+            <td>{{ record.get_cashOrBank_display }}</td>
+            <td>{{ record.description }}</td>
+        </tr>   
+    {% empty %}
+    {% endfor %}
+</table>
+    <p><a href="{% url 'expensetracker:add_income' sheet.id %}">Add Record</a></p>
+{% endblock content %}

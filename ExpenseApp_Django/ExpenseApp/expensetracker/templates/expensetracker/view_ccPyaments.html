@@ -1,0 +1,23 @@
+{% extends 'expensetracker/base.html' %}
+
+{% block content %}
+<h2>CC Payments {{ sheet.month }} {{ sheet.year }}</h2>
+<table>
+<tr>
+    <th>Date</th>
+    <th>Credit Card</th>
+    <th>Amount</th>
+    <th>PayType</th>
+</tr>   
+    {% for record in records %}
+        <tr>
+            <td>{{ record.date }}</td>
+            <td>{{ record.get_creditCard_display }}</td>
+            <td>{{ record.amount }}</td>
+            <td>{{ record.get_payType_display }}</td>
+        </tr>   
+    {% empty %}
+    {% endfor %}
+</table>
+    <p><a href="{% url 'expensetracker:add_cc_payment' sheet.id %}">Add Record</a></p>
+{% endblock content %}

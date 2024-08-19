@@ -1,0 +1,10 @@
+{% extends 'expensetracker/base.html' %}
+
+{% block content %}
+<p>Add CC Payment:</p>
+    <form action="{% url 'expensetracker:add_cc_payment' sheet.id %}" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button name="submit">Add entry</button>
+    </form>
+{% endblock content %}
