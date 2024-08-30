@@ -1,4 +1,4 @@
-# portfolio
+# PORTFOLIO
 This repository contains samples that demonstrate my capabilities with python.
 
 Note: UIs were designed to demonstrate functionality and not necessarily visual appeal
@@ -14,3 +14,7 @@ This folder contains a tkinter app that allows you to input data related to fina
 
 # Machine Learning
 This folder contains predictive models written utilizing SciKit-Learn and TensorFlow
+
+# MlbStatsClient
+This folder contains an application that calls the mlb stats api and generates dataframes as well as a visual for
+some of the data
