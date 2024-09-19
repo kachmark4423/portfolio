@@ -1,5 +1,5 @@
 # portfolio
-This repository contains samples that demonstrate my capabilities with python.
+This repository contains samples that demonstrate my capabilities with python and other programing languages.
 
 Note: UIs were designed to demonstrate functionality and not necessarily visual appeal
 
